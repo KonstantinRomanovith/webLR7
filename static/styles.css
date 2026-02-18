@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f0f2f5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.calc-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.screen {
+    background: #f8f9fa;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #dee2e6;
+}
+
+    .screen span {
+        display: block;
+        font-family: 'Courier New', monospace;
+        font-size: 28px;
+        color: #212529;
+        text-align: right;
+        word-wrap: break-word;
+        min-height: 42px;
+    }
+
+.buttons {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 10px;
+}
+
+.digits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.other {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.key {
+    background: #e9ecef;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 15px 10px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #212529;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+    .key:hover {
+        background: #dee2e6;
+    }
+
+    .key:active {
+        background: #ced4da;
+    }
+
+.digit {
+    background: white;
+}
+
+.operation {
+    background: #e9ecef;
+    font-weight: bold;
+}
+
+.bracket {
+    background: #e9ecef;
+}
+
+.result {
+    background: #007bff;
+    color: white;
+    border-color: #0056b3;
+    grid-column: span 2;
+}
+
+    .result:hover {
+        background: #0056b3;
+    }
+
+    .result:active {
+        background: #004085;
+    }
+
+.clear {
+    background: #dc3545;
+    color: white;
+    border-color: #bd2130;
+    grid-column: span 2;
+}
+
+    .clear:hover {
+        background: #bd2130;
+    }
+
+    .clear:active {
+        background: #a71d2a;
+    }
+
+.key[style*="hidden"] {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 450px) {
+    .calc-container {
+        padding: 15px;
+    }
+
+    .key {
+        padding: 12px 8px;
+        font-size: 16px;
+    }
+
+    .screen span {
+        font-size: 24px;
+    }
+}
+
+/* Стили для ошибок */
+.screen span.error {
+    color: #dc3545;
+}
